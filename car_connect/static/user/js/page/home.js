@@ -611,7 +611,7 @@ class Map extends DomController{
                 CComp.element("div", address, {"height":"auto", "margin":"10px 0"})+
                 CComp.element("div", dealership, {"height":"auto"})+
                 CComp.element("div", "", {"position":"absolute", "bottom":"-10px", "border":"10px solid rgba(40, 40, 40, 0.95)", "border-left-color":"transparent", "border-top-color":"transparent", "transform":"rotate(45deg)"}),
-                {"background-color":"rgba(40, 40, 40, 0.95)", "color":"#fff", "font-size":"13px", "padding":"10px 20px 20px 20px", "border-radius":"8px", "position":"relative", "min-width":"150px"}
+                {"background-color":"rgba(40, 40, 40, 0.95)", "color":"#fff", "font-size":"13px", "padding":"10px", "border-radius":"8px", "position":"relative", "min-width":"150px"}
             )
         
 
