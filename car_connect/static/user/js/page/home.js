@@ -610,8 +610,8 @@ class Map extends DomController{
                 CComp.element("div", CComp.element("img","",{"vertical-align":"middle"},{"src":`/static/user/res/brand_logo/${brand_code}.png`}) + ' ' + name, {"font-size":"14px", "font-weight":"bold"})+
                 CComp.element("div", address, {"height":"auto", "margin":"10px 0"})+
                 CComp.element("div", dealership, {"height":"auto"})+
-                CComp.element("div", "", {"position":"absolute", "bottom":"-10px", "border":"10px solid rgba(40, 40, 40, 0.95)", "border-left-color":"transparent", "border-top-color":"transparent", "transform":"rotate(45deg)"}),
-                {"background-color":"rgba(40, 40, 40, 0.95)", "color":"#fff", "font-size":"13px", "padding":"10px", "border-radius":"8px", "position":"relative", "min-width":"150px"}
+                CComp.element("div", "", {"position":"absolute", "bottom":"-15px", "border":"10px solid rgba(40, 40, 40, 0.95)", "border-left-color":"transparent", "border-top-color":"transparent", "transform":"rotate(45deg) translateX(-50%)", "left":"50%"}),
+                {"background-color":"rgba(40, 40, 40, 0.95)", "color":"#fff", "font-size":"13px", "padding":"10px", "border-radius":"8px", "position":"relative", "min-width":"150px", "box-shadow":"0 0 16px 0 #848484"}
             )
         
 
