@@ -398,8 +398,9 @@ class Map extends DomController{
                 {
                     type:"click", 
                     exe: ()=>{
-                        let new_window = window.open("about:blank");
-                        new_window.location.href = random_commercial.landing;
+                        // let new_window = window.open("about:blank");
+                        // new_window.location.href = random_commercial.landing;
+                        window.location.href = random_commercial.landing;
                     }
                 }
             )

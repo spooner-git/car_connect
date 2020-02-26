@@ -126,7 +126,7 @@ class AppBase{
         let content = CComp.element(
             "div",
             CComp.element("p", "자동차 구매를 위해 전시장을 돌아다닐 건데, 매번 제조사 홈페이지에서 주소 찾기 귀찮지 않으셨나요?<br><br> 수입차 전시장과 서비스센터 위치를 한번에 모아서 확인해요!", {"word-break":"keep-all", "font-size":"13px"})+
-            CComp.element("p", "클리앙 굴러간당 당원 PTERS <br>업데이트 요청 / 오류 문의<br>skkim.ku@gmail.com", {"font-size":"11px", "margin-bottom":0}),
+            CComp.element("p", "From 클리앙 굴러간당 PTERS <br>업데이트 요청 / 오류 문의<br>skkim.ku@gmail.com", {"font-size":"11px", "margin-bottom":0}),
             {"padding":"0 15px"}
         )
 
