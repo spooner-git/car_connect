@@ -49,8 +49,6 @@ const BRAND_CODE_TO_NAME = {
 }
 
 
-
-
 const mb_dealership = 
 [ 
     { 
@@ -11874,10 +11872,11 @@ const CAR_MAKERS_SERVICE = {
 }
 
 const commercial_banners = [
-   {url:'/static/user/res/demo/benz.jpg', landing:"https://www.mercedes-benz.co.kr/"},
-   {url:'/static/user/res/demo/citroen.jpg', landing:"https://www.citroen-kr.com/"},
-   {url:'/static/user/res/demo/landrover.jpg', landing:"https://www.landroverkorea.co.kr/"},
-   {url:'/static/user/res/demo/toyota.png', landing:"https://www.toyota.co.kr/"}
+   // {url:'/static/user/res/demo/benz.jpg', landing:"https://www.mercedes-benz.co.kr/"},
+   // {url:'/static/user/res/demo/citroen.jpg', landing:"https://www.citroen-kr.com/"},
+   // {url:'/static/user/res/demo/landrover.jpg', landing:"https://www.landroverkorea.co.kr/"},
+   // {url:'/static/user/res/demo/toyota.png', landing:"https://www.toyota.co.kr/"}
+   {url:'/static/user/res/demo/carmap.png', landing:"mailto:skkim.ku@gmail.com"}
 ];
 
 function randomArry(arr){

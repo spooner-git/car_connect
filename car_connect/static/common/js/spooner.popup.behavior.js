@@ -8,6 +8,8 @@ const ALL_CLOSE = "all_close";
 const POPUP_INNER_HTML = 0;
 const POPUP_AJAX_CALL = 1;
 const POPUP_BASIC = 2;
+const POPUP_ALERT = 3;
+const POPUP_CONFIRM = 4;
 const POPUP_SIZE_WINDOW = 0;
 const POPUP_FROM_LEFT = 0;
 const POPUP_FROM_RIGHT = 1;
@@ -20,11 +22,35 @@ let layer_popup = (function (){
     let popup_array = [];
     let windowHeight = window.innerHeight;
 
-    function ready_popup_html(popup_name, popup_size){
+    function ready_popup_html(popup_name, type){
         let html = `<div class="popup_mobile">
                         <div class="${popup_name}">
                         </div>
                     </div>`;
+
+        if(type == POPUP_ALERT){
+            html = 
+                    `<div class="popup_mobile popup_mobile_basic" style="transform: translate(0px, 0px); width: 100%; height: 100%; left: 0px; z-index: 0; transition: transform 0.3s ease-in-out 0s; visibility: visible; display: none;">
+                        <div class="${popup_name}">
+                            <div class="wrapper_popup_basic_comment"></div>
+                            <div class="wrapper_popup_basic_buttons" style="display:table;width:100%">
+                                <div class="popup_basic_confirm" style="display:table-cell">확인</div>
+                            </div>
+                        </div>
+                    </div>`;
+        }else if(type == POPUP_CONFIRM){
+            html = 
+                    `<div class="popup_mobile popup_mobile_basic" style="transform: translate(0px, 0px); width: 100%; height: 100%; left: 0px; z-index: 0; transition: transform 0.3s ease-in-out 0s; visibility: visible; display: none;">
+                        <div class="${popup_name}">
+                            <div class="wrapper_popup_basic_comment"></div>
+                            <div class="wrapper_popup_basic_buttons" style="display:table;width:100%">
+                                <div class="popup_basic_cancel" onclick="layer_popup.close_layer_popup(POPUP_SIZE_WINDOW)" style="border-right:var(--border-article);display:table-cell">취소</div>
+                                <div class="popup_basic_confirm" style="display:table-cell">확인</div>
+                            </div>
+                        </div>
+                    </div>`
+        }
+        
         if($('#popup_store').length == 0){
             $('body').append(`<div id="popup_store"></div>`)
         }
@@ -151,11 +177,12 @@ let layer_popup = (function (){
                         // func_prevent_double_click_free();
                     }, 10);
                 });
-            }else if(call_method==POPUP_BASIC){
+            }else if(call_method == POPUP_BASIC || call_method == POPUP_ALERT || call_method == POPUP_CONFIRM){
+                ready_popup_html(popup_name, call_method);
                 func_set_popup_basic(popup_name, data);
                 let func_animation_set = this.animation_set;
                 setTimeout(function (){
-                    ready_popup_html(popup_name, popup_size);
+                    // ready_popup_html(popup_name, call_method);
                     func_set_popup_position($(`.${popup_name}`).parents('.popup_mobile'), animation_type, popup_size);
 
                     let popup_data = func_open_layer_popup(popup_name, popup_size, animation_type);
@@ -470,7 +497,7 @@ function func_set_popup_basic (popup_name, data){
 }
 
 function show_error_message (message){
-    layer_popup.open_layer_popup(POPUP_BASIC,
+    layer_popup.open_layer_popup(POPUP_ALERT,
                                  'popup_basic_user_confirm',
                                  POPUP_SIZE_WINDOW, POPUP_FROM_PAGE,
                                  {'popup_title':message.title,
@@ -479,7 +506,7 @@ function show_error_message (message){
 }
 
 function show_user_confirm (message, callback){
-    layer_popup.open_layer_popup(POPUP_BASIC,
+    layer_popup.open_layer_popup(POPUP_CONFIRM,
                                  'popup_basic_user_select',
                                  POPUP_SIZE_WINDOW, POPUP_FROM_PAGE,
                                  {'popup_title':message.title,
