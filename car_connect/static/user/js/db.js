@@ -18,7 +18,7 @@ const CAR_MAKERS = [
     {brand_name:"토요타", image_url:"/static/user/res/brand_logo/ty.png", brand_code:"ty"},
     {brand_name:"인피니티", image_url:"/static/user/res/brand_logo/if.png", brand_code:"if"},
     {brand_name:"닛산", image_url:"/static/user/res/brand_logo/ns.png", brand_code:"ns"},
-   //  {brand_name:"포르쉐", image_url:"/static/user/res/brand_logo/ps.png", brand_code:"ps"},
+    {brand_name:"포르쉐", image_url:"/static/user/res/brand_logo/ps.png", brand_code:"ps"},
     {brand_name:"마세라티", image_url:"/static/user/res/brand_logo/mc.png", brand_code:"mc"},
     {brand_name:"DS", image_url:"/static/user/res/brand_logo/ds.png", brand_code:"ds"},
 ];
@@ -5740,6 +5740,166 @@ const ds_dealership =
       "brand_code":"ds",
       "x":"127.06716406336852",
       "y":"37.50268281170642"
+   }
+]
+
+const ps_dealership = 
+[
+   {
+      "region":"서울",
+      "name":"포르쉐 센터 용산",
+      "address":"서울 용산구 이촌로 12",
+      "workhour":"월요일~금요일 : 09:00 ~ 19:00 / 주말 및 공휴일 : 10:00 ~ 14:00",
+      "contact":"02-6263-0911",
+      "dealership":"-",
+      "brand_code":"ps",
+      "type":"dealership",
+      "x":"126.95423440714997",
+      "y":"37.53043313626411"
+   },
+   {
+      "region":"서울",
+      "name":"포르쉐 스튜디오 청담",
+      "address":"서울 강남구 도산대로 420 청담스퀘어 G층",
+      "workhour":"월요일~금요일 : 09:00 ~ 20:00 / 주말 및 공휴일 : 10:00 ~ 18:00",
+      "contact":"02-6191-0911",
+      "dealership":"-",
+      "brand_code":"ps",
+      "type":"dealership",
+      "x":"127.0420822792459",
+      "y":"37.52305349801214"
+   },
+   {
+      "region":"경기",
+      "name":"포르쉐 인증 중고차 센터 분당 판교",
+      "address":"경기도 성남시 수정구 여수대로 18, 3층",
+      "workhour":"월요일~금요일(10월-3월) : 09:00 ~ 19:00 / 월요일~금요일(4월-9월) : 09:00 ~ 20:00 / 주말 및 공휴일 : 10:00 ~ 18:00",
+      "contact":"031-729-0912",
+      "dealership":"-",
+      "brand_code":"ps",
+      "type":"dealership",
+      "x":"127.10428234693235",
+      "y":"37.4219793069029"
+   },
+   {
+      "region":"서울",
+      "name":"포르쉐 센터 대치",
+      "address":"서울시 강남구 영동대로 401",
+      "workhour":"월요일~금요일(10월-3월) : 09:00 ~ 19:00 / 월요일~금요일(4월-9월) : 09:00 ~ 20:00 / 주말 및 공휴일 : 10:00 ~ 18:00",
+      "contact":"02-2051-0911",
+      "dealership":"-",
+      "brand_code":"ps",
+      "type":"dealership",
+      "x":"127.06454250405105",
+      "y":"37.5052539404488"
+   },
+   {
+      "region":"경기",
+      "name":"포르쉐 센터 분당 판교",
+      "address":"경기도 성남시 수정구 여수대로 18",
+      "workhour":"월요일~금요일(10월-3월) : 09:00 ~ 19:00 / 월요일~금요일(4월-9월) : 09:00 ~ 20:00 / 주말 및 공휴일 : 10:00 ~ 18:00",
+      "contact":"031-729-0911",
+      "dealership":"-",
+      "brand_code":"ps",
+      "type":"dealership",
+      "x":"127.10428234693235",
+      "y":"37.4219793069029"
+   },
+   {
+      "region":"서울",
+      "name":"포르쉐 센터 서초",
+      "address":"서울시 서초구 남부순환로 2215",
+      "workhour":"월요일~금요일(10월-3월) : 09:00 ~ 19:00 / 월요일~금요일(4월-9월) : 09:00 ~ 20:00 / 주말 및 공휴일 : 10:00 ~ 18:00",
+      "contact":"02-440-0911",
+      "dealership":"-",
+      "brand_code":"ps",
+      "type":"dealership",
+      "x":"126.9944786197286",
+      "y":"37.47395962382327"
+   },
+   {
+      "region":"대전",
+      "name":"포르쉐 센터 대전",
+      "address":"대전시 대덕구 한밭대로 1128",
+      "workhour":"월요일~금요일 : 09:00 ~ 20:00 / 주말 : 10:00 ~ 18:00",
+      "contact":"042-862-0911",
+      "dealership":"-",
+      "brand_code":"ps",
+      "type":"dealership",
+      "x":"127.42370443510531",
+      "y":"36.35850714107973"
+   },
+   {
+      "region":"경기",
+      "name":"포르쉐 센터 일산",
+      "address":"경기도 고양시 고양대로 136",
+      "workhour":"월요일~금요일 : 09:00 ~ 20:00 / 주말 및 공휴일 : 10:00 ~ 17:00",
+      "contact":"031-813-0911",
+      "dealership":"-",
+      "brand_code":"ps",
+      "type":"dealership",
+      "x":"126.72581654914467",
+      "y":"37.66181945490574"
+   },
+   {
+      "region":"인천",
+      "name":"포르쉐 센터 인천",
+      "address":"인천시 남동구 인주대로 686",
+      "workhour":"월요일~금요일(10월-3월) : 09:00 ~ 19:00 / 월요일~금요일(4월-9월) : 09:00 ~ 20:00 / 주말 및 공휴일 : 10:00 ~ 18:00",
+      "contact":"032-450-3000",
+      "dealership":"-",
+      "brand_code":"ps",
+      "type":"dealership",
+      "x":"126.71315966869541",
+      "y":"37.449154604847585"
+   },
+   {
+      "region":"부산",
+      "name":"포르쉐 센터 부산",
+      "address":"부산시 해운대구 해운대로 277",
+      "workhour":"월요일~금요일(10월-3월) : 09:00 ~ 19:00 / 월요일~금요일(4월-9월) : 09:00 ~ 20:00 / 주말 및 공휴일 : 10:00 ~ 18:00",
+      "contact":"051-749-0911",
+      "dealership":"-",
+      "brand_code":"ps",
+      "type":"dealership",
+      "x":"129.13117532354448",
+      "y":"35.17582510440323"
+   },
+   {
+      "region":"광주",
+      "name":"포르쉐 센터 광주",
+      "address":"광주광역시 서구 상무대로 957",
+      "workhour":"월요일~금요일 : 09:00 ~ 20:00 / 주말 및 공휴일 : 09:00 ~ 19:00",
+      "contact":"062-526-0911",
+      "dealership":"도이치아우토",
+      "brand_code":"ps",
+      "type":"dealership",
+      "x":"126.86675920894095",
+      "y":"35.15183965565527"
+   },
+   {
+      "region":"대구",
+      "name":"포르쉐 센터 대구",
+      "address":"대구 수성구 동대구로 84",
+      "workhour":"월요일~금요일 : 09:00 ~ 20:00 / 주말 : 10:00 ~ 18:00",
+      "contact":"053-768-9011",
+      "dealership":"-",
+      "brand_code":"ps",
+      "type":"dealership",
+      "x":"128.62458438939825",
+      "y":"35.83764918080317"
+   },
+   {
+      "region":"경기",
+      "name":"포르쉐 센터 수원",
+      "address":"경기도 용인시 중부대로 20 ",
+      "workhour":"월요일~금요일 : 09:00 ~ 20:00 / 토요일 : 09:00 ~ 20:00 일요일 및 공휴일 : 09:00 ~ 19:00",
+      "contact":"031-214-0911",
+      "dealership":"-",
+      "brand_code":"ps",
+      "type":"dealership",
+      "x":"127.07095451918318",
+      "y":"37.26734406670899"
    }
 ]
 
@@ -11822,6 +11982,131 @@ const ds_service =
    }
 ]
 
+const ps_service = 
+[
+   {
+      "region":"인천",
+      "name":"포르쉐 서비스 센터 인천",
+      "address":"인천시 남동구 인주대로 686",
+      "workhour":"월요일~금요일 : 09:00 ~ 18:00 / 주말 및 공휴일 : 휴무",
+      "contact":"032-450-3020",
+      "dealership":"-",
+      "brand_code":"ps",
+      "x":"126.71315966869541",
+      "y":"37.449154604847585"
+   },
+   {
+      "region":"서울",
+      "name":"포르쉐 서비스 센터 서초",
+      "address":"서울시 서초구 남부순환로 2215 지하 1층",
+      "workhour":"월요일~금요일 : 09:00 ~ 18:00 / 토요일 : 09:00 ~ 13:00 / 일요일 및 공휴일 : 휴무",
+      "contact":"02-440-0912",
+      "dealership":"-",
+      "brand_code":"ps",
+      "x":"126.9944786197286",
+      "y":"37.47395962382327"
+   },
+   {
+      "region":"경기",
+      "name":"포르쉐 서비스 센터 분당",
+      "address":"경기도 성남시 수정구 설개로 2번길 10",
+      "workhour":"월요일~금요일 : 09:00 ~ 18:00 / 토요일 : 09:00 ~ 13:00 / 일요일 및 공휴일 : 휴무",
+      "contact":"031-729-0912",
+      "dealership":"-",
+      "brand_code":"ps",
+      "x":"127.10417327971125",
+      "y":"37.42153610235813"
+   },
+   {
+      "region":"경기",
+      "name":"포르쉐 서비스 센터 일산",
+      "address":"경기도 고양시 고양대로 136",
+      "workhour":"월요일~금요일 : 09:00 ~ 18:00 / 주말 및 공휴일 : 09:00 ~ 13:00",
+      "contact":"031-932-0919",
+      "dealership":"-",
+      "brand_code":"ps",
+      "x":"126.72581654914467",
+      "y":"37.66181945490574"
+   },
+   {
+      "region":"서울",
+      "name":"포르쉐 서비스 센터 대치",
+      "address":"서울시 강남구 역삼로 523",
+      "workhour":"월요일~금요일 : 09:00 ~ 18:00 / 토요일 : 09:00 ~ 13:00 / 일요일 및 공휴일 : 휴무",
+      "contact":"02-6150-0911",
+      "dealership":"-",
+      "brand_code":"ps",
+      "x":"127.0603839782778",
+      "y":"37.50393706764746"
+   },
+   {
+      "region":"서울",
+      "name":"포르쉐 센터 용산 워크샵",
+      "address":"서울 용산구 이촌로 12",
+      "workhour":"월요일~금요일 : 08:00 ~ 18:00 / 토요일 : 09:00 ~ 13:00 / 일요일 및 공휴일 : 휴무",
+      "contact":"02-6263-0911",
+      "dealership":"-",
+      "brand_code":"ps",
+      "x":"126.95423440714997",
+      "y":"37.53043313626411"
+   },
+   {
+      "region":"대구",
+      "name":"포르쉐 서비스 센터 대구",
+      "address":"대구 수성구 동대구로 84",
+      "workhour":"월요일~금요일 : 09:00 ~ 18:00 / 토요일 : 09:00 ~ 13:00 / 일요일 및 공휴일 : 휴무",
+      "contact":"053-768-0933",
+      "dealership":"-",
+      "brand_code":"ps",
+      "x":"128.62458438939825",
+      "y":"35.83764918080317"
+   },
+   {
+      "region":"대전",
+      "name":"포르쉐 서비스 센터 대전",
+      "address":"대전시 대덕구 한밭대로 1128",
+      "workhour":"월요일~금요일 : 09:00 ~ 18:00 / 토요일 : 09:00 ~ 13:00 / 일요일 및 공휴일 : 휴무",
+      "contact":"042-862-0912",
+      "dealership":"-",
+      "brand_code":"ps",
+      "x":"127.42370443510531",
+      "y":"36.35850714107973"
+   },
+   {
+      "region":"경기",
+      "name":"포르쉐 서비스 센터 수원",
+      "address":"경기도 용인시 중부대로 20",
+      "workhour":"월요일~금요일 : 09:00 ~ 18:00 / 토요일 : 09:00 ~ 13:00 / 일요일 및 공휴일 : 휴무",
+      "contact":"031-214-0911",
+      "dealership":"-",
+      "brand_code":"ps",
+      "x":"127.07095451918318",
+      "y":"37.26734406670899"
+   },
+   {
+      "region":"광주",
+      "name":"포르쉐 서비스 센터 광주",
+      "address":"광주광역시 서구 상무대로 957",
+      "workhour":"월요일~금요일 : 09:00 ~ 18:00 / 주말 및 공휴일 : 휴무",
+      "contact":"062-526-0991",
+      "dealership":"-",
+      "brand_code":"ps",
+      "x":"126.86675920894095",
+      "y":"35.15183965565527"
+   },
+   {
+      "region":"부산",
+      "name":"포르쉐 센터 부산 워크샵",
+      "address":"부산 해운대구 해운대로219번길 3",
+      "workhour":"월요일~금요일 : 09:00 ~ 18:00 / 토요일 : 09:00 ~ 13:00 / 일요일 및 공휴일 : 휴무",
+      "contact":"051-930-0412",
+      "dealership":"-",
+      "brand_code":"ps",
+      "x":"129.1265626595914",
+      "y":"35.179078245546805"
+   }
+]
+
 const CAR_MAKERS_DEALERSHIP = {
     bm:bm_dealership,
     mb:mb_dealership,
@@ -11844,6 +12129,7 @@ const CAR_MAKERS_DEALERSHIP = {
     ns:ns_dealership,
     mc:mc_dealership,
     ds:ds_dealership,
+    ps:ps_dealership
 }
 
 const CAR_MAKERS_SERVICE = {
@@ -11867,7 +12153,8 @@ const CAR_MAKERS_SERVICE = {
    if:if_service,
    ns:ns_service,
    mc:mc_service,
-   ds:ds_service
+   ds:ds_service,
+   ps:ps_service
 }
 
 const commercial_banners = [

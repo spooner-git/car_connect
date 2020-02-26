@@ -327,7 +327,7 @@ class Map extends DomController{
                 }
             });
         }
-        // this.db_add_geo(service_data.ds);
+        // this.db_add_geo(service_data.ps);
         callback(result);
     }
 
