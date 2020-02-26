@@ -1,0 +1,30 @@
+{% extends "home_base.html" %}
+
+{% load static_url %}
+{% block local_css %}
+    
+{% endblock %}
+
+{% block top_right %}
+
+{% endblock %} 
+
+{% block content %}
+<section id="App">
+</section>
+
+{% endblock %}
+
+{% block local_js_footer %}
+    <link rel="stylesheet" href={% static_url "user/css/page/home.css" %}>    
+    <script type="text/javascript" src={% static_url "user/js/page/home.js" %}></script>
+    <script type="text/javascript" src={% static_url "user/js/db.js" %}></script>
+    <script>
+
+        var pages = new Pages("#App");
+        pages.home();
+
+        Kakao.init(kakao_nav_ak);
+
+    </script>
+{% endblock %}

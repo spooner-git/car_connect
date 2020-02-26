@@ -1,0 +1,28 @@
+.search_box_bg_image{
+    /* background-image: url('/static/user/res/background/car_bg1.jpg'), linear-gradient(135deg, rgba(98,187,70,0.36) 0%,rgba(0,157,221,0.67) 87%,rgba(0,157,221,0.72) 100%); */
+    background-image: url(/static/user/res/background/car_bg1.jpg), linear-gradient(135deg, rgb(65, 98, 96) 0%,rgba(0,157,221,0.67) 87%,rgba(0,157,221,0.72) 100%);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-blend-mode: exclusion;
+}
+
+.customoverlay {position:relative;bottom:85px;border-radius:6px;border: 1px solid #ccc;border-bottom:2px solid #ddd;float:left;}
+.customoverlay:nth-of-type(n) {border:0; box-shadow:0px 1px 2px #888;}
+.customoverlay a {display:block;text-decoration:none;color:#000;text-align:center;border-radius:6px;font-size:14px;font-weight:bold;overflow:hidden;background: #d95050;background: #d95050 url(http://t1.daumcdn.net/localimg/localimages/07/mapapidoc/arrow_white.png) no-repeat right 14px center;}
+.customoverlay .title {display:block;text-align:center;background:#fff;margin-right:35px;padding:10px 15px;font-size:14px;font-weight:bold;}
+.customoverlay:after {content:'';position:absolute;margin-left:-12px;left:50%;bottom:-12px;width:22px;height:12px;background:url('http://t1.daumcdn.net/localimg/localimages/07/mapapidoc/vertex_white.png')}
+
+
+#road_view{
+    position: absolute;
+    width: 100vw;
+    height:100vh;
+    top: 0;
+    left: 0;
+    display: none;
+}
+.roadview_visible{
+    display: block !important;
+    z-index: 1500;
+}

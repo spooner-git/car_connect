@@ -1,0 +1,72 @@
+@import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);
+@import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css);
+ @import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-jp.css);
+html, body{
+    /* height: 100%; */
+    margin: 0;
+    font-family: 'Noto Sans KR', sans-serif;
+    /* font-family: 'Spoqa Han Sans', 'Apple SD Gothic Neo', sans-serif; */
+     /* font-family: 'Spoqa Han Sans', 'Spoqa Han Sans JP', sans-serif; */
+}
+
+*{
+    box-sizing: border-box;
+    user-select: none;
+    -webkit-tap-highlight-color:transparent;
+    -moz-tap-highlight-color:transparent;
+    -o-tap-highlight-color:transparent;
+    tap-highlight-color:transparent;
+}
+
+nav{
+    height: 80px;
+    background-color: transparent;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    /* background-image: linear-gradient(180deg, black, transparent); */
+    z-index: 10;
+}
+
+input, textarea, select{
+    -webkit-appearance: none;
+    /* font-family: 'Spoqa Han Sans', 'Spoqa Han Sans JP', sans-serif; */
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+:focus{
+    outline: none;
+}
+:disabled{
+    background-color: var(--bg-inactive);
+}
+input{
+    border-radius: 10px;
+    height: 50px;
+    padding: 10px;
+    border: var(--border-article);
+    background-color: var(--bg-main);
+}
+.content_editable{
+    border-radius: 10px;
+    height: auto;
+    min-height: 50px;
+    padding: 10px;
+    border: var(--border-article);
+    background-color: var(--bg-main);
+}
+select{
+    border-radius: 10px;
+    height: 50px;
+    padding: 10px;
+    border: var(--border-article);
+    background-color: var(--bg-main);
+}
+
+textarea{
+    
+}
+
+.article_padding{
+    padding: 20px;
+}

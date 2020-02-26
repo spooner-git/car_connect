@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" class="spooner_light_mode">
+<head>
+    {% load static_url %}
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+
+    <title>{% block title %}CAR 커넥트 | 자동차 전시장 검색{% endblock %}</title>
+    {% block local_css %}
+    {% endblock %}
+    <script type="text/javascript" src={% static_url "user/js/const.js" %}></script>
+    <script type="text/javascript" src={% static_url "common/js/jquery.1.12.4.min.js" %}></script>
+    <script type="text/javascript" src={% static_url "common/js/croppie.min.js" %}></script>
+    <script type="text/javascript" src={% static_url "common/js/swiper.min.js" %}></script>
+    <script type="text/javascript" src={% static_url "common/js/spooner.component.common.js" %}></script>
+    <script type="text/javascript" src={% static_url "common/js/spooner.popup.base.js" %}></script>
+    <script type="text/javascript" src={% static_url "common/js/spooner.popup.behavior.js" %}></script>
+    <link rel="stylesheet" href={% static_url "common/css/croppie.css" %}>
+    <link rel="stylesheet" href={% static_url "common/css/swiper.min.css" %}>
+    <link rel="stylesheet" href={% static_url "common/css/spooner.color.css" %}>
+    <link rel="stylesheet" href={% static_url "common/css/spooner.anim.css" %}>
+    <link rel="stylesheet" href={% static_url "common/css/spooner.component.common.css" %}>
+    <link rel="stylesheet" href={% static_url "common/css/spooner.popup.base.css" %}>
+    <link rel="stylesheet" href={% static_url "common/css/spooner.popup.basic.css" %}>    
+
+    <link rel="stylesheet" href={% static_url "user/css/app_base.css" %}>    
+    <script type="text/javascript" src={% static_url "user/js/app_base.js" %}></script>
+
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=62c589bbccdf47bc59bca187bac43199&libraries=services,clusterer,drawing"></script>
+    <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
+</head>
+
+<body>
+    <nav id="top_nav">
+
+    </nav>
+    
+
+{% block content %}
+
+{% endblock %}
+<footer>
+</footer>
+
+{% block footer %}
+{% endblock %}
+
+<script type="text/javascript">
+
+    var top_nav = new AppBase("#top_nav");
+    top_nav.init();
+
+</script>
+{% block local_js_footer %}
+{% endblock %}
+
+
+
+
+</body>
+</html>
