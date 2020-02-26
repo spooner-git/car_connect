@@ -87,7 +87,6 @@ class Map extends DomController{
         this.map_markers = [];
         this.selected_marker = null;
         this.selected_marker_description = null;
-        this.roadview_custom_overlays = [];
 
         this.initial_selected_brand = initial_selected_brand;
 
@@ -483,6 +482,7 @@ class Map extends DomController{
                 "div",
                 CComp.button("div", "로드뷰 종료", {"width":"250px", "height":"40px", "line-height":"34px", "background-color":"#222", "color":"#fff", "font-size:":"14px", "font-weight":"500", "border-radius":"10px"}, null, ()=>{
                     $("#road_view").removeClass("roadview_visible");
+                    $('#roadview_wrapper').html("");
                 }),
                 {"position":"fixed", "top":"20px", "left":"50%", "transform":"translateX(-50%)", "z-index":"1500"}
             )
@@ -607,20 +607,18 @@ class Map extends DomController{
         var roadviewTargetOverlayContent = 
             CComp.container(
                 "div",
-                CComp.element("div", CComp.element("img","",{"vertical-align":"middle"},{"src":`/static/user/res/brand_logo/${brand_code}.png`}) + ' ' + name, {"font-size":"14px", "font-weight":"bold"})+
-                CComp.element("div", address, {"height":"auto", "margin":"10px 0"})+
+                CComp.element("div", CComp.element("img","",{"vertical-align":"middle"},{"src":`/static/user/res/brand_logo/${brand_code}.png`}), {"float":"right"})+
+                CComp.element("div", brand_name, {"font-size":"16px", "font-weight":"500"}) + 
+                CComp.element("div", name) + 
+                CComp.element("div", address, {"height":"auto", "margin-top":"10px", "color":"#dadada"})+
+                CComp.element("div", contact, {"height":"auto", "margin-bottom":"10px", "color":"#dadada"})+
                 CComp.element("div", dealership, {"height":"auto"})+
                 CComp.element("div", "", {"position":"absolute", "bottom":"-15px", "border":"10px solid rgba(40, 40, 40, 0.95)", "border-left-color":"transparent", "border-top-color":"transparent", "transform":"rotate(45deg) translateX(-50%)", "left":"50%"}),
-                {"background-color":"rgba(40, 40, 40, 0.95)", "color":"#fff", "font-size":"13px", "padding":"10px", "border-radius":"8px", "position":"relative", "min-width":"150px", "box-shadow":"0 0 16px 0 #848484"}
+                {"background-color":"rgba(40, 40, 40, 0.95)", "color":"#fff", "font-size":"13px", "padding":"10px", "border-radius":"8px", "position":"relative", "width":"250px", "box-shadow":"0 0 16px 0 #848484", "white-space":"normal"}
             )
         
 
         kakao.maps.event.addListener(roadview, 'init', ()=>{
-            this.roadview_custom_overlays.forEach((el)=>{
-                el.setMap(null);
-                this.roadview_custom_overlays = [];
-            })
-
             this.roadviewTargetOverlay = new kakao.maps.CustomOverlay({
                 position:position,
                 content:roadviewTargetOverlayContent,
@@ -632,8 +630,6 @@ class Map extends DomController{
             var projection = roadview.getProjection();
             var viewpoint = projection.viewpointFromCoords(this.roadviewTargetOverlay.getPosition(), this.roadviewTargetOverlay.getAltitude());
             roadview.setViewpoint(viewpoint);
-
-            this.roadview_custom_overlays.push(this.roadviewTargetOverlay);
         })
         
 
