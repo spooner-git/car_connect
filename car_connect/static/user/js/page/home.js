@@ -624,8 +624,8 @@ class Map extends DomController{
             this.roadviewTargetOverlay = new kakao.maps.CustomOverlay({
                 position:position,
                 content:roadviewTargetOverlayContent,
-                xAnchor:0.5,
-                xAnchor:1.1
+                // xAnchor:0.5,
+                yAnchor:1.1
             });
 
             this.roadviewTargetOverlay.setMap(roadview);
