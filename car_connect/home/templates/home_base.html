@@ -8,6 +8,12 @@
     <meta name="description" content="다양한 수입차 자동차 전시장, 서비스 센터 검색을 간편하게 한 곳에서!">
 
     <title>{% block title %}카맵 | 자동차 전시장 검색{% endblock %}</title>
+    <link rel="shortcut icon" href={% static_url "common/res/favicon/favicon.png" %} type="image/x-icon">
+    <link rel="icon" href={% static_url "common/res/favicon/favicon.png" %} type="image/x-icon">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="카맵 | 자동차 전시장 검색">
+    <meta property="og:description" content="다양한 수입차 자동차 전시장과 서비스센터 정보를 간편하게 한 곳에서">
+    <meta property="og:image" content="https://carmap.info/static/common/res/og/og_carmap.png">
     {% block local_css %}
     {% endblock %}
     <script type="text/javascript" src={% static_url "user/js/const.js" %}></script>
