@@ -87,6 +87,7 @@ class Map extends DomController{
         this.map_markers = [];
         this.selected_marker = null;
         this.selected_marker_description = null;
+        this.roadview_custom_overlays = [];
 
         this.initial_selected_brand = initial_selected_brand;
 
@@ -381,7 +382,7 @@ class Map extends DomController{
         let last_line = 
             CComp.container(
                 "div",
-                CComp.button(`roadview_${contact.replace(/[- ())]/gi,"")}`, "로드뷰", {"background-color":"#282828", "border":"1px solid #ffffff", "border-radius":"3px", "flex":"1 1 0", "line-height":"27px", "margin-right":"5px"}, null, ()=>{this.user_event_roadView(y, x)}) +
+                CComp.button(`roadview_${contact.replace(/[- ())]/gi,"")}`, "로드뷰", {"background-color":"#282828", "border":"1px solid #ffffff", "border-radius":"3px", "flex":"1 1 0", "line-height":"27px", "margin-right":"5px"}, null, ()=>{this.user_event_roadView(place)}) +
                 CComp.button(`call_to_${contact.replace(/[- ()]/gi,"")}`, "전화걸기", {"background-color":"#282828", "border":"1px solid #ffffff", "border-radius":"3px", "flex":"1 1 0", "line-height":"27px", "margin-right":"5px"}, null, ()=>{document.location.href = `tel:${contact.replace(/[- )]/gi,"")}`}) +
                 CComp.button(`move_to_${contact.replace(/[- ())]/gi,"")}`, "카카오 네비", {"background-color":"#282828", "border":"1px solid #ffffff", "border-radius":"3px", "flex":"1 1 0", "line-height":"27px", "margin-right":"5px"}, null, ()=>{this.user_event_go_to_kakao_navi({"place_name":brand_name +' '+ name, "x":x, "y":y})}) +
                 CComp.button(`copy_${contact.replace(/[- ())]/gi,"")}`, "주소 복사", {"background-color":"#282828", "border":"1px solid #ffffff", "border-radius":"3px", "flex":"1 1 0", "line-height":"27px", "margin-right":"5px"}, null, ()=>{this.user_event_copy_address(address)}),
@@ -580,7 +581,18 @@ class Map extends DomController{
         });
     }
 
-    user_event_roadView(y, x){
+    user_event_roadView(place){
+        const brand_name = BRAND_CODE_TO_NAME[place.brand_code];
+        const brand_code = place.brand_code;
+        const region = place.region;
+        const name = place.name;
+        const address = place.address;
+        const workhour = place.workhour;
+        const contact = place.contact;
+        const dealership = place.dealership;
+        const x = place.x;
+        const y = place.y;
+
         let roadviewContainer = document.getElementById("roadview_wrapper");
         let roadview = new kakao.maps.Roadview(roadviewContainer);
         let roadviewClient = new kakao.maps.RoadviewClient();
@@ -591,6 +603,40 @@ class Map extends DomController{
         });
 
         $('#road_view').addClass("roadview_visible");
+
+        var roadviewTargetOverlayContent = 
+            CComp.container(
+                "div",
+                CComp.element("div", CComp.element("img","",{"vertical-align":"middle"},{"src":`/static/user/res/brand_logo/${brand_code}.png`}) + ' ' + name, {"font-size":"14px", "font-weight":"bold"})+
+                CComp.element("div", address, {"height":"auto", "margin":"10px 0"})+
+                CComp.element("div", dealership, {"height":"auto"})+
+                CComp.element("div", "", {"position":"absolute", "bottom":"-10px", "border":"10px solid rgba(40, 40, 40, 0.95)", "border-left-color":"transparent", "border-top-color":"transparent", "transform":"rotate(45deg)"}),
+                {"background-color":"rgba(40, 40, 40, 0.95)", "color":"#fff", "font-size":"13px", "padding":"10px 20px 20px 20px", "border-radius":"8px", "position":"relative", "min-width":"150px"}
+            )
+        
+
+        kakao.maps.event.addListener(roadview, 'init', ()=>{
+            this.roadview_custom_overlays.forEach((el)=>{
+                el.setMap(null);
+                this.roadview_custom_overlays = [];
+            })
+
+            this.roadviewTargetOverlay = new kakao.maps.CustomOverlay({
+                position:position,
+                content:roadviewTargetOverlayContent,
+                xAnchor:0.5,
+                xAnchor:1.1
+            });
+
+            this.roadviewTargetOverlay.setMap(roadview);
+            var projection = roadview.getProjection();
+            var viewpoint = projection.viewpointFromCoords(this.roadviewTargetOverlay.getPosition(), this.roadviewTargetOverlay.getAltitude());
+            roadview.setViewpoint(viewpoint);
+
+            this.roadview_custom_overlays.push(this.roadviewTargetOverlay);
+        })
+        
+
     }
 
     kakao_zoom_in(){
