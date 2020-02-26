@@ -16,6 +16,7 @@ Including another URLconf
 import debug_toolbar
 from django.conf.urls import url, include
 from django.contrib import admin
+from django.views.generic import TemplateView
 
 from . import views
 
@@ -24,4 +25,6 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^home/', include('home.urls', namespace='home')),
     url(r'^__debug__/', include(debug_toolbar.urls)),
+    url(r'^robots\.txt$', TemplateView.as_view(template_name='robots.txt', content_type='text/plain')),
+    url(r'^sitemap\.xml$', TemplateView.as_view(template_name='sitemap.xml', content_type='text/xml'))
 ]
