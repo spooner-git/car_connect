@@ -21,10 +21,10 @@ class AppBase{
         this.install_target = install_target;
         this.background = "transparent"; /*black, white, transparent*/
         this.color_combination = {
-            transparent:{icon:"var(--fundamental-white)", bg:"transparent", logo:"/static/common/res/logo/logo1_white.png", shade:"linear-gradient(180deg, black, transparent)"},
-            black:{icon:"var(--fundamental-white)", bg:"#282828", logo:"/static/common/res/logo/logo1_white.png", shade:"unset"},
-            white:{icon:"var(--fundamental-black)", bg:"#ffffff", logo:"/static/common/res/logo/logo1.png", shade:"unset"},
-            nologo:{icon:"var(--fundamental-white)", bg:"transparent", logo:"/static/common/res/logo/logo1_white.png", shade:"linear-gradient(180deg, black, transparent)"}
+            transparent:{icon:"var(--fundamental-white)", bg:"transparent", logo:"/static/common/res/logo/logo_white.png", shade:"linear-gradient(180deg, black, transparent)"},
+            black:{icon:"var(--fundamental-white)", bg:"#282828", logo:"/static/common/res/logo/logo_white.png", shade:"unset"},
+            white:{icon:"var(--fundamental-black)", bg:"#ffffff", logo:"/static/common/res/logo/logo.png", shade:"unset"},
+            nologo:{icon:"var(--fundamental-white)", bg:"transparent", logo:"/static/common/res/logo/logo_white.png", shade:"linear-gradient(180deg, black, transparent)"}
         };
         if(background != undefined){
             this.background = background;
@@ -112,14 +112,27 @@ class AppBase{
         let menu3_style = {"padding":"15px 0", "color":"var(--fundamental-white)", "font-size":"20px", "font-weight":"bold", "animation-delay":"0.1s", "animation-duration":"1.5s"};
         let close_style = {"padding":"15px", "color":"var(--fundamental-white)", "position":"absolute", "top":"15px", "right":"15px", "animation-delay":"0.2s", "animation-duration":"1s"};
         let menu1 = CComp.button("menu_search", "Home", menu1_style, {class:"anim_fade_in"}, ()=>{pages.home();layer_popup.close_layer_popup()});
-        let menu2 = CComp.button("menu_about", "About Car Connect", menu3_style, {class:"anim_fade_in"}, ()=>{});
-        let close = CComp.button("menu_about", CImg.x(["var(--fundamental-white)"]), close_style, {class:"anim_fade_in"}, ()=>{layer_popup.close_layer_popup()});
+        let menu2 = CComp.button("menu_about", "About 카맵", menu3_style, {class:"anim_fade_in"}, ()=>{show_error_message({title:this.capmap_introduce_text().title, comment:this.capmap_introduce_text().content})});
+        let close = CComp.button("menu_close", CImg.x(["var(--fundamental-white)"]), close_style, {class:"anim_fade_in"}, ()=>{layer_popup.close_layer_popup()});
 
         let menu_wrapper = CComp.container("div", menu1 + menu2, {"position":"absolute", "top":"50%", "left":"50%", "transform":"translate(-50%, -50%)"}, null);
         let box = CComp.container("div", menu_wrapper + close, {"background-color":"var(--fundamental-black)", "width":"100%", "height":"100%", "position":"relative"}, null);
         
         return box;
     }
+
+    capmap_introduce_text(){
+        let title = CComp.element("img", "", {"width":"100px"}, {"src":"/static/common/res/logo/logo.png"});
+        let content = CComp.element(
+            "div",
+            CComp.element("p", "자동차 구매를 위해 전시장을 돌아다닐 건데, 매번 제조사 홈페이지에서 주소 찾기 귀찮지 않으셨나요?<br><br> 수입차 전시장과 서비스센터 위치를 한 곳에서 한번에 모아서 확인해요!", {"word-break":"keep-all", "font-size":"13px"})+
+            CComp.element("p", "클리앙 굴러간당 당원 PTERS <br>업데이트 요청 / 오류 문의<br>skkim.ku@gmail.com", {"font-size":"11px", "margin-bottom":0}),
+            {"padding":"0 15px"}
+        )
+
+        return {title:title, content:content};
+    }
+
 }
 
 class Pages{
