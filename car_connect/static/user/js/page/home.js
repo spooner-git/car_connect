@@ -231,7 +231,7 @@ class Map extends DomController{
             this.overlay_car_makers_list_visible = OFF;
             this.draw_overlay();
 
-            history.replaceState(null, null, `?bcode=${brand_code},x=${x},y=${y}`);
+            // history.replaceState(null, null, `?bcode=${brand_code},x=${x},y=${y}`);
         });
 
 
@@ -538,7 +538,7 @@ class Map extends DomController{
             this.kakao_setMarkers(dealership);
             this.draw_overlay();
         });
-        history.replaceState(null, null, '/');
+        // history.replaceState(null, null, '/');
     }
 
     user_event_go_to_kakao_navi(place){
