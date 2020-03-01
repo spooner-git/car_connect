@@ -90,7 +90,7 @@ class Map extends DomController{
 
         this.initial_selected_brand = initial_selected_brand;
 
-        this.selected_maker = this.initial_selected_brand == undefined ? [] : [this.initial_selected_brand];
+        this.selected_maker = this.initial_selected_brand == undefined || this.initial_selected_brand == null ? [] : [this.initial_selected_brand];
         this.overlay_car_makers_list_expand = OFF;
         this.overlay_car_makers_list_visible = ON;
         this.overlay_pin_description_visible = OFF;
@@ -149,7 +149,7 @@ class Map extends DomController{
             let Y = data.coords.latitude;
             let map_options = {
                 center: new kakao.maps.LatLng(Y, X), //지도 중심 좌표
-                level: 5 //지도 레벨 (확대 축소)
+                level: 7 //지도 레벨 (확대 축소)
             };
             this.map = new kakao.maps.Map($map_container, map_options);
             if(callback != undefined){
@@ -163,7 +163,7 @@ class Map extends DomController{
             let Y = 37.499483853924;
             let map_options = {
                 center: new kakao.maps.LatLng(Y, X), //지도 중심 좌표
-                level: 5 //지도 레벨 (확대 축소)
+                level: 7 //지도 레벨 (확대 축소)
             };
             this.map = new kakao.maps.Map($map_container, map_options);
             if(callback != undefined){
@@ -230,6 +230,8 @@ class Map extends DomController{
             this.overlay_car_makers_list_expand = OFF;
             this.overlay_car_makers_list_visible = OFF;
             this.draw_overlay();
+
+            history.replaceState(null, null, `?bcode=${brand_code},x=${x},y=${y}`);
         });
 
 
@@ -536,6 +538,7 @@ class Map extends DomController{
             this.kakao_setMarkers(dealership);
             this.draw_overlay();
         });
+        history.replaceState(null, null, '/');
     }
 
     user_event_go_to_kakao_navi(place){
@@ -645,7 +648,7 @@ class Map extends DomController{
     }
 
     kakao_zoom_point(){
-        this.map.setLevel(2);
+        this.map.setLevel(3);
         if(this.selected_marker != null){
             var markerPosition = new kakao.maps.LatLng(Number(this.selected_marker.coordY), Number(this.selected_marker.coordX) );
             this.map.panTo(markerPosition);
@@ -653,7 +656,7 @@ class Map extends DomController{
     }
 
     kakao_zoom_fit(){
-        this.map.setLevel(5);
+        this.map.setLevel(7);
         if(this.selected_marker != null){
             var markerPosition = new kakao.maps.LatLng(Number(this.selected_marker.coordY), Number(this.selected_marker.coordX) );
             this.map.panTo(markerPosition);

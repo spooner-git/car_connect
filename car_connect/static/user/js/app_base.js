@@ -164,7 +164,7 @@ class Pages{
             }
         }
         // top_nav.change_bg("white");
-        this._map = new Map(data.brand_code);
+        this._map = new Map(data != undefined ? data.brand_code: null);
         this._map.draw_layout(install_target);
         this._map.draw_all();
         top_nav.change_bg("nologo");

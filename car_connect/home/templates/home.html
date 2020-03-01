@@ -26,6 +26,15 @@
 
         Kakao.init(kakao_nav_ak);
 
+        console.log("loc", location.href)
+
+        let location_href = location.href;
+        console.log("111",location_href.split("?").length)
+        if(location_href.split("?").length >= 2){
+            pages.map();
+        }
+
+
         // history.replaceState(null, null, '#home');
         // window.addEventListener("hashchange", function(e){
         //     if(layer_popup.stack.length > 0){
