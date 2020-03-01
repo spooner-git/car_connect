@@ -27,10 +27,11 @@
         Kakao.init(kakao_nav_ak);
 
 
-        // let location_href = location.href;
-        // if(location_href.split("?").length >= 2){
-        //     pages.map();
-        // }
+        let location_href = location.href;
+        if(location_href.split("?").length >= 2){
+            // pages.map();
+            history.replaceState(null, null, "/");
+        }
 
 
         // history.replaceState(null, null, '#home');
